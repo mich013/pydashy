@@ -1,6 +1,10 @@
 from example_samplers import *
+from smartthings import SmartTings
+
 
 def run(app, xyzzy):
+    st = SmartTings()
+    
     samplers = [
         SynergySampler(xyzzy, 3),
         BuzzwordsSampler(xyzzy, 2), # 10
@@ -9,7 +13,7 @@ def run(app, xyzzy):
 
     try:
         app.run(debug=True,
-		host="192.168.1.2",
+                host="127.0.0.1",
                 port=5000,
                 threaded=True,
                 use_reloader=False,
