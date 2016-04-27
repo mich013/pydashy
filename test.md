@@ -1,10 +1,6 @@
 Getting Started
 ===============
 
-=====================
-
- 
-
 These are some basic survival instructions to get a local instance of
 dailydot.com installed and running. Some elbow grease will need to be put into
 making this easier and more portable. However, with these directions and some
@@ -14,11 +10,6 @@ luck, you'll be up and running!
 
 Dependencies
 ------------
-
-=========
----------
-
- 
 
 ### Python:
 
@@ -47,76 +38,43 @@ django-nose
 
 
 
-##       Utilities
+###       Utilities
 
 curl
-
 npm
-
 wget
-
 pip
 
-
-
-
-
-## 3rd Party Packages
+### 3rd Party Packages
 
 Heroku Cli
-
 PostgresSQL
-
 Redis
-
 LessCSS
-
 Java - required by ElasticSearch
-
 ElasticSearch
 
 
 
-## Support Libraries Required
-
-
+### Support Libraries Required
 
 libxml2-dev
-
 libxslt1-dev
-
 libffi-dev
-
-
-
- 
 
 ### Installation Instructions
 -------------------------
 
- 
+##    Installing Utilities
 
  
 
-###    Installing Utilities
 
- 
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        sudo apt-get install wget
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''        sudo apt-get install wget
         sudo apt-get install curl
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         sudo apt-get install python-pip
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         sudo apt-get install npm
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''
 
 
 
