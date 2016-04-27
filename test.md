@@ -29,7 +29,7 @@ various modules in Ubuntu 14.04 stock this causes a halt to the build process.
 
  
 
-###       Required Python install packages
+##       Required Python install packages
 
 
 
@@ -39,7 +39,7 @@ python-virtualenv
 
 
 
-###       Required Python Modules
+##       Required Python Modules
 
 lxml
 
@@ -47,7 +47,7 @@ django-nose
 
 
 
-###       Utilities
+##       Utilities
 
 curl
 
@@ -61,7 +61,7 @@ pip
 
 
 
-### 3rd Party Packages
+## 3rd Party Packages
 
 Heroku Cli
 
@@ -77,7 +77,7 @@ ElasticSearch
 
 
 
-### Support Libraries Required
+## Support Libraries Required
 
 
 
@@ -91,7 +91,7 @@ libffi-dev
 
  
 
-Installation Instructions
+### Installation Instructions
 -------------------------
 
  
