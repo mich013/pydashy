@@ -157,6 +157,7 @@
 ```
 
 ## ElasticSearch Install
+
 ```
         wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-2.3.1.tar.gz
         tar xzf elasticsearch-2.3.1.tar.gz
@@ -170,13 +171,13 @@
         sudo ./bin/elasticsearch&
 ```
 
-## Testing ElasticSearch
-        Using browser or curl  connect to http://localhost:9200
+## Testing ElasticSearch Using browser or curl  connect to http://localhost:9200
 
 ```
         curl localhost:9200
 ```
-        Result should be
+
+# Result should be
 
 ```
         {
@@ -195,7 +196,6 @@
 
 
 ### Setting up build and Virtialenv
--------------------------------
 
 ## Clone repo
 
@@ -207,9 +207,7 @@
         venv/bin/pip install -r requirements.txt 
 ```
 
-## Setting up postgreSQL Daily Dot DB
-
-        Make Sure you login to heroku
+## Setting up postgreSQL Daily Dot DB (Make Sure you login to heroku)
 
 ```
         heroku login
@@ -247,12 +245,10 @@
 ## Adding Missing Django Requirement for Django-nose
 
 ```
-
         pip install django-nose
-``` 
+```
 
-## Indexing for ElasticSearch (make sure ElasticSearch is running)
-        Age is in hours
+## Indexing for ElasticSearch (make sure ElasticSearch is running) Age is in hours
 
 ```
 python manage.py update_index --age=168 -v 2 -b 100 -k 4 -u default
