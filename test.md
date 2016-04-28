@@ -29,32 +29,32 @@ modules and libraries.
 
 ## Obtain the snapshot. This will take a while!
 
-        wget -O snapshot.dump `heroku pg:backups public-url -q --app dailydot`
+    wget -O snapshot.dump `heroku pg:backups public-url -q --app dailydot`
 
 
 ## Create a database and load the snapshot into it
 
-        createdb dailydot -T template0 -E UTF8
-        pg_restore --verbose --clean --no-acl --no-owner -j 4 -d dailydot snapshot.dump
+    createdb dailydot -T template0 -E UTF8
+    pg_restore --verbose --clean --no-acl --no-owner -j 4 -d dailydot snapshot.dump
 
 ## Connect to the Daily Dot PostgreSQL database, change that user to superuser, and grant it all privileges on all Daily Dot tables
 
-        psql dailydot
-        alter user postgres superuser;
-        grant all privileges on all tables in schema public to postgres;
-        (quit psql)
+    psql dailydot
+    alter user postgres superuser;
+    grant all privileges on all tables in schema public to postgres;
+    (quit psql)
 
 ## Activating the virtualenv
 
-        source venv/bin/activate
+    source venv/bin/activate
 
 ## Adding Missing Django Requirement for Django-nose
 
-        pip install django-nose
+    pip install django-nose
 
 ## Indexing for ElasticSearch (make sure ElasticSearch is running) Age is in hours
 
-        python manage.py update_index --age=168 -v 2 -b 100 -k 4 -u default
+    python manage.py update_index --age=168 -v 2 -b 100 -k 4 -u default
 
 ## Starting the Django server
 
