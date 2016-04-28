@@ -307,19 +307,20 @@ The first load may take a while, as the Redis cache may need to populate.
 ## OS Issues
 
     Several flavors of Ubuntu were used during the creation of this note below are Issues that were discovered
+ 
     
-    |   Distribution       |  Version     |  Comments                                                  |
-    |----------------------|--------------|------------------------------------------------------------|
-    | Ubuntu               | 14.04        | The default Python verson that sips with this distro is    |
-    |                      |              | locked at 2.7.6. This causes an issue with the ssl libaries|
-    |                      |              | used in some of the modules and 3rd party addons.          |
-    |                      |              |                                                            |
-    |                      |              | The workaround to this issue is to hand build and install  |
-    |                      |              | version 2.7.8 or above of python.                          |
-    |                      | 15.10        | Durning the testing of this Distribution there was a fatal |
-    |                      |              | build error that is currently unresolved.                  |
-    |                      |              | *** At this point this ussue is unresolved ***             |
-    |                      |              |                                                            |
+|   Distribution       |  Version     |  Comments                                                  |
+|----------------------|--------------|------------------------------------------------------------|
+| Ubuntu               | 14.04        | The default Python verson that sips with this distro is    |
+|                      |              | locked at 2.7.6. This causes an issue with the ssl libaries|
+|                      |              | used in some of the modules and 3rd party addons.          |
+|                      |              |                                                            |
+|                      |              | The workaround to this issue is to hand build and install  |
+|                      |              | version 2.7.8 or above of python.                          |
+|                      | 15.10        | Durning the testing of this Distribution there was a fatal |
+|                      |              | build error that is currently unresolved.                  |
+|                      |              | *** At this point this ussue is unresolved ***             |
+|                      |              |                                                            |
     
 
 ## Python:
