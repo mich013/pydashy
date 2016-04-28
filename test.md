@@ -13,6 +13,30 @@ modules and libraries.
 
 # Creating and Building Instance
 
+## Database downloading and importing
+
+### Create database
+
+    createdb dailydot -T template0 -E UTF8
+
+### Login to  Heroku via Heroku-cli
+    heroku login
+ 
+### Get Database snapsot
+    wget -O snapshot.dump `heroku pg:backups public-url -q --app dailydot`
+    
+### Load Data into Database
+    
+    pg_restore --verbose --clean --no-acl --no-owner -j 4 -d dailydot snapshot.dump
+
+### Connect to the Daily Dot PostgreSQL database, change that user to superuser, and grant it all privileges on all Daily Dot tables
+
+    psql dailydot
+    alter user postgres superuser;
+    grant all privileges on all tables in schema public to postgres;
+    (quit psql)
+
+
 ## Cloning and Initializing Git Repository
 
 
