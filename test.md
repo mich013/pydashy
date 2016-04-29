@@ -1,6 +1,6 @@
 Getting Started Todo's
 - [x] add missing file requirements-dex.txt - its been renamed requirements/dev.txt
-- [ ] add note on when ElasticSeach apt-get package wouldnt load in both OS and ElasticSearch sections
+- [x] add note on when ElasticSeach apt-get package wouldnt load in both OS and ElasticSearch sections
 - [x] fix django-nose spelling
 - [x] look into redis-server package availabilty
         Found package has been added to the install instructions
@@ -8,16 +8,15 @@ Getting Started Todo's
 - [x] manage.py has excute bit set drop python
 - [x] move up virtualenv activate
 - [ ] show venvwrapper examples
-
+- [x] add note on redis apt-get install strangeness with service errors
+- [x] rearrange dependencies and install steps for proper flow
 
 # Getting Started
 =================
 
 These are some basic survival instructions to get a local instance of dailydot.com
 installed and running. Some elbow grease will need to be put into making this easier
-and more portable. However, with these directions and some luck, you'll be up and
-
-running!
+and more portable. However, with these directions and some luck, you'll be up and running!
 
 If this is a clean and fresh build install please be sure to read the
 [dependency section](#dependencies) to insure installation of all required software,
@@ -27,6 +26,10 @@ modules and libraries.
 # Creating and Building Instance
 
 ## Database downloading and importing
+
+### Switch to database user account
+    
+    sudo su - postgres
 
 ### Create database
 
@@ -83,15 +86,18 @@ The first load may take a while, as the Redis cache may need to populate.
 
 | Area               |      Type      |      Package        |                                                        |
 |--------------------|----------------|---------------------| -------------------------------------------------------|
-| Python-Core        | System Package | python-dev          | python-dev is the package that contains the header files for the Python C API, which is used by lxml because it includes Python C extensions for high performance.Jun 23, 2015|
-|                    |                | python-virtualenv   | virtualenv is a tool to create isolated Python environments. virtualenv creates a folder which contains all the necessary executables to use the packages that a Python project would need.|
-|                    | Python Package | lxml                | lxml is the most feature-rich and easy-to-use library for processing XML and HTML in the Python language.|
-|                    |                | django-nose         | django-nose provides all the goodness of nose in your Django tests, like: Testing just your apps by default, not all the standard ones that happen to be in INSTALLED_APPS. Running the tests in one or more specific modules (or apps, or classes, or folders, or just running a specific test)|
-|                    |                |                     |                                                        |
+| Support Libraries  | System Package | libxml2-dev         | Libraries, include files, etc you can use to developXML applications. This library allows to manipulate XMLIt includes support to read, modify and write HTML files. There is DTDs support this includes validation even with complex DtDs, either time or later once the document has been The output can be a simple SAX stream or and memory DOM like representations. In this case one the built-in XPath and XPointer implementation subnodes or ranges. A flexible Input/Output available, with existing HTTP and FTP combined to an URI library.|
+|                    |                | libxslt1-dev        | XSLT is an XML language for defining transformations of files from XML to some other arbitrary format, such , HTML, plain text, etc. using standard XSLT libxslt is a C library which implements 1.0.|
+|                    |                | libffi-dev          | This package contains the headers and static library files necessary for building programs which use libffi. function interface is the popular name for that allows code written in one language code written in another language. 
 | Utilities          | System Package | curl                | A command line tool for getting or sending files using URL syntax. Since cURL uses libcurl, it supports a range of common Internet protocols, currently including TTP, HTTPS, FTP, FTPS, SCP, SFTP, TFTP, LDAP, DAP,ICT, TELNET, FILE, IMAP, POP3, SMTP and RTSP (the last four only in versions newer than 7.20.0 or 9 February 2010).|
 |                    |                | npm                 | npm is a NodeJS package manager. As its name would imply, you can use it to install node programs. Also, if you use it in development, it makes it easier to specify and link dependencies.Sep 11, 2010|
 |                    |                | wget                | GNU Wget (or just Wget, formerly Geturl) is a computer program that retrieves content from web servers. It is part of the GNU Project. Its name is derived from World Wide Web and get. It supports downloading via HTTP, HTTPS, and FTP protocols.|
 |                    |                | pip                 | pip is a package management system used to install and manage software packages written in Python. Many packages can be found in the Python Package Index (PyPI). Python 2.7.9 and later (on the python2 series), and Python 3.4 and later include pip (pip3 for Python 3) by default.|
+|                    |                |                     |                                                        |
+| Python-Core        | System Package | python-dev          | python-dev is the package that contains the header files for the Python C API, which is used by lxml because it includes Python C extensions for high performance.Jun 23, 2015|
+|                    |                | python-virtualenv   | virtualenv is a tool to create isolated Python environments. virtualenv creates a folder which contains all the necessary executables to use the packages that a Python project would need.|
+|                    | Python Package | lxml                | lxml is the most feature-rich and easy-to-use library for processing XML and HTML in the Python language.|
+|                    |                | django-nose         | django-nose provides all the goodness of nose in your Django tests, like: Testing just your apps by default, not all the standard ones that happen to be in INSTALLED_APPS. Running the tests in one or more specific modules (or apps, or classes, or folders, or just running a specific test)|
 |                    |                |                     |                                                        |
 | 3rd Party Software | System Package | Heroku Cli          | The heroku command-line tool is an interface to the Heroku Platform API and includes support for things /renaming apps, running one-off dynos, , configuring add-ons and managing your . It’s generally installed in your local as part of the Heroku Toolbelt.|
 |                    |                | PostgresSQL         | PostgreSQL (pronounced "post-gress-Q-L") is an open source relational database management system ( DBMS ) a worldwide team of volunteers. PostgreSQL controlled by any corporation or other private the source code is available free of charge.|
@@ -100,17 +106,14 @@ The first load may take a while, as the Redis cache may need to populate.
 |                    |                | Java                | Java is a programming language and computing platform first released by Sun Microsystems in 1995. There are applications and websites that will not work have Java installed, and more are created . Java is fast, secure, and reliable.|
 |                    |                | ElasticSearch       | Elasticsearch is a search server based on Lucene. It provides a distributed, multitenant-capable full-text with an HTTP web interface and free JSON documents. Elasticsearch is developed and is released as open source under the terms Apache License.|
 |                    |                |                     |                                                        |
-| Support Libraries  | System Package | libxml2-dev         | Libraries, include files, etc you can use to developXML applications. This library allows to manipulate XMLIt includes support to read, modify and write HTML files. There is DTDs support this includes validation even with complex DtDs, either time or later once the document has been The output can be a simple SAX stream or and memory DOM like representations. In this case one the built-in XPath and XPointer implementation subnodes or ranges. A flexible Input/Output available, with existing HTTP and FTP combined to an URI library.|
-|                    |                | libxslt1-dev        | XSLT is an XML language for defining transformations of files from XML to some other arbitrary format, such , HTML, plain text, etc. using standard XSLT libxslt is a C library which implements 1.0.|
-|                    |                | libffi-dev          | This package contains the headers and static library files necessary for building programs which use libffi. function interface is the popular name for that allows code written in one language code written in another language. 
 
-### Installing Python-Core Additions
+### Installing Libraries
 
-| Package            | Commands                                                            |
+| Package            | Commands                                                            | 
 |--------------------|---------------------------------------------------------------------|
-| python-dev         | ``` sudo apt-get install python-dev ```                             |         
-| python-virtualenv  | ``` sudo apt-get install python-virtualenv ```                      |
-| lxml               | ``` pip install lxml ```                                            |
+| libxml2-dev        | ``` sudo apt-get install libxml2-dev ```                            |
+| libxslt1-dev       | ``` sudo apt-get install libxslt1-dev ```                           |
+| libffi-dev         | ``` sudo apt-get install libffi-dev ```                             |
 |                    |                                                                     |
 
 ### Installing Utilities
@@ -122,16 +125,15 @@ The first load may take a while, as the Redis cache may need to populate.
 | wget               | ``` sudo apt-get install wget ```                                   |
 | pip                | ``` sudo apt-get install python-pip ```                             |
 |                    |                                                                     | 
-        
-### Installing Libraries
 
-| Package            | Commands                                                            | 
+### Installing Python-Core Additions
+
+| Package            | Commands                                                            |
 |--------------------|---------------------------------------------------------------------|
-| libxml2-dev        | ``` sudo apt-get install libxml2-dev ```                            |
-| libxslt1-dev       | ``` sudo apt-get install libxslt1-dev ```                           |
-| libffi-dev         | ``` sudo apt-get install libffi-dev ```                             |
+| python-dev         | ``` sudo apt-get install python-dev ```                             |         
+| python-virtualenv  | ``` sudo apt-get install python-virtualenv ```                      |
+| lxml               | ``` pip install lxml ```                                            |
 |                    |                                                                     |
-
 
 ### Installing 3rd Party Software
 
@@ -169,8 +171,8 @@ The first load may take a while, as the Redis cache may need to populate.
 |   Distribution       |  Version     |  Comments                                                  |
 |----------------------|--------------|------------------------------------------------------------|
 | Ubuntu               | 14.04        | The default Python version that sips with this distro is .7.6. This causes an issue with the ssl libraries of the modules and 3rd party addons. this issue is to hand build and install7.8 or above of python.|
-|                      | 15.04        | The apt-get package for ElasticSearch while loads with-out error refuses to start. It gives no error or log entries. *** Additional investigation is required.|
-|                      | 15.10        | Durning the testing of this Distribution there was a fatal error that is currently unresolved. point this ussue is unresolved|
+|                      | 15.04        | The apt-get package for ElasticSearch while loads with-out error refuses to start. It gives no error or log entries. *** Additional investigation is required.***|
+|                      | 15.10        | Durning the testing of this Distribution there was a fatal error that is currently unresolved.|
 
 ## Python:
 
@@ -191,9 +193,19 @@ The first load may take a while, as the Redis cache may need to populate.
    further
 ### Starting/Stopping Redis
 
+#### Manual install start and stop
+
     sudo service redis_6379 start
     sudo service redis_6379 stop
-        
+
+#### apt-get install start stop instructions
+
+    Currently while the server is starting it is returning a file not found error.
+    *** This is still under investigation ***
+    
+    sudo service redis-server start
+    sudo service redis-server start
+    
 ### Testing Redis
 
     Stating the redis-cli is a good way to ensure you have the service up and
