@@ -10,6 +10,10 @@ Getting Started Todo's
 - [ ] show venvwrapper examples
 - [x] add note on redis apt-get install strangeness with service errors
 - [x] rearrange dependencies and install steps for proper flow
+- [x] fix elasticsearch start do not run as root
+- [x] move sudo apt-get update ... to start of lib section
+- [x] add tcl8.5 to 3rd party section
+- [ ] remove django-nose requirement from doc add dev.txt fixed issue
 
 # Getting Started
 =================
@@ -69,11 +73,11 @@ modules and libraries.
 
 ## Indexing for ElasticSearch (make sure ElasticSearch is running) Age is in hours
 
-    manage.py update_index --age=168 -v 2 -b 100 -k 4 -u default
+    python manage.py update_index --age=168 -v 2 -b 100 -k 4 -u default
 
 ## Starting the Django server
 
-    manage.py runserver 0.0.0.0:8000
+    python manage.py runserver 0.0.0.0:8000
 
 
 Once you see, "Starting development server at http://0.0.0.0:8000/", 
@@ -86,7 +90,9 @@ The first load may take a while, as the Redis cache may need to populate.
 
 | Area               |      Type      |      Package        |                                                        |
 |--------------------|----------------|---------------------| -------------------------------------------------------|
-| Support Libraries  | System Package | libxml2-dev         | Libraries, include files, etc you can use to developXML applications. This library allows to manipulate XMLIt includes support to read, modify and write HTML files. There is DTDs support this includes validation even with complex DtDs, either time or later once the document has been The output can be a simple SAX stream or and memory DOM like representations. In this case one the built-in XPath and XPointer implementation subnodes or ranges. A flexible Input/Output available, with existing HTTP and FTP combined to an URI library.|
+| Support Libraries  | System Package | apt-get update      | Resynchronize the package index files and Upgrade the Debian Linux system including security update (Internet access required)|
+|                    |                | build-essential     | Packages and Header files required for building system level software|
+|                    |                | libxml2-dev         | Libraries, include files, etc you can use to developXML applications. This library allows to manipulate XMLIt includes support to read, modify and write HTML files. There is DTDs support this includes validation even with complex DtDs, either time or later once the document has been The output can be a simple SAX stream or and memory DOM like representations. In this case one the built-in XPath and XPointer implementation subnodes or ranges. A flexible Input/Output available, with existing HTTP and FTP combined to an URI library.|
 |                    |                | libxslt1-dev        | XSLT is an XML language for defining transformations of files from XML to some other arbitrary format, such , HTML, plain text, etc. using standard XSLT libxslt is a C library which implements 1.0.|
 |                    |                | libffi-dev          | This package contains the headers and static library files necessary for building programs which use libffi. function interface is the popular name for that allows code written in one language code written in another language. 
 | Utilities          | System Package | curl                | A command line tool for getting or sending files using URL syntax. Since cURL uses libcurl, it supports a range of common Internet protocols, currently including TTP, HTTPS, FTP, FTPS, SCP, SFTP, TFTP, LDAP, DAP,ICT, TELNET, FILE, IMAP, POP3, SMTP and RTSP (the last four only in versions newer than 7.20.0 or 9 February 2010).|
@@ -101,6 +107,7 @@ The first load may take a while, as the Redis cache may need to populate.
 |                    |                |                     |                                                        |
 | 3rd Party Software | System Package | Heroku Cli          | The heroku command-line tool is an interface to the Heroku Platform API and includes support for things /renaming apps, running one-off dynos, , configuring add-ons and managing your . It’s generally installed in your local as part of the Heroku Toolbelt.|
 |                    |                | PostgresSQL         | PostgreSQL (pronounced "post-gress-Q-L") is an open source relational database management system ( DBMS ) a worldwide team of volunteers. PostgreSQL controlled by any corporation or other private the source code is available free of charge.|
+|                    |                | Tcl                 | Tcl (originally from Tool Command Language, but conventionally spelled "Tcl" rather than "TCL"; pronounced as "tickle" or "tee-see-ell"[4]) is a scripting language created by John Ousterhout.[5] Originally "born out of frustration",[6] according to the author, with programmers devising their own languages intended to be embedded into applications, Tcl gained acceptance on its own. It is commonly used for rapid prototyping, scripted applications, GUIs and testing. Tcl is used on embedded systems platforms, both in its full form and in several other small-footprint versions.|
 |                    |                | Redis               | Redis is an open source (BSD licensed), in-memory data store, used as database, cache and message It supports data structures such as strings, lists, sets, sorted sets with range queries, hyperloglogs and geospatial indexes with.|
 |                    |                | LessCSS             | Less is a CSS pre-processor, meaning that it extends the CSS language, adding features that allow variables, functions and many other techniques that allow make CSS that is more maintainable, themable and extendable.|
 |                    |                | Java                | Java is a programming language and computing platform first released by Sun Microsystems in 1995. There are applications and websites that will not work have Java installed, and more are created . Java is fast, secure, and reliable.|
@@ -111,6 +118,8 @@ The first load may take a while, as the Redis cache may need to populate.
 
 | Package            | Commands                                                            | 
 |--------------------|---------------------------------------------------------------------|
+| update             | ``` sudo apt-get update ```                                         |
+| build-essential    | ``` sudo apt-get install build-essential ```                        |
 | libxml2-dev        | ``` sudo apt-get install libxml2-dev ```                            |
 | libxslt1-dev       | ``` sudo apt-get install libxslt1-dev ```                           |
 | libffi-dev         | ``` sudo apt-get install libffi-dev ```                             |
@@ -143,10 +152,8 @@ The first load may take a while, as the Redis cache may need to populate.
 | Heroku             | ``` wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh ```                             |
 | PostgresSQL        | ``` sudo apt-get install postgresql-9.4 ```                                                     |
 |                    | ``` sudo apt-get install postgresql-server-dev-9.4 ```                                          |
-| Redis - Manual Inst| ``` sudo apt-get update ```                                                                     |
-|                    | ``` sudo apt-get install build-essential ```                                                    |
-|                    | ``` sudo apt-get install tcl8.5 ```                                                             |
-|                    | ``` wget http://download.redis.io/redis-stable.tar.gz ```                                       |
+| Tcl                | ``` sudo apt-get install tcl8.5 ```                                                             |
+| Redis - Manual Inst| ``` wget http://download.redis.io/redis-stable.tar.gz ```                                       |
 |                    | ``` tar xvzf redis-stable.tar.gz                                                                |
 |                    | ``` cd redis-stable ```                                                                         |
 |                    | ``` make                                                                                        |
@@ -225,7 +232,7 @@ The first load may take a while, as the Redis cache may need to populate.
 ### Starting ElasticSearch
 
     cd /usr/share/elasticsearch
-    sudo ./bin/elasticsearch&
+    ./bin/elasticsearch&
 
 ### Testing ElasticSearch curl  connect to http://localhost:9200
 
