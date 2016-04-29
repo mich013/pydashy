@@ -1,12 +1,12 @@
 Getting Started Todo's
-- [] add missing file requirements-dex.txt - its been renamed requirements/dev.txt
-- [ ] add note on when ElasticSeach deb package wouldnt losd in both OS and ElasticSearch sections
-- [ ] fix django-nose spelling
+- [x] add missing file requirements-dex.txt - its been renamed requirements/dev.txt
+- [ ] add note on when ElasticSeach apt-get package wouldnt load in both OS and ElasticSearch sections
+- [x] fix django-nose spelling
 - [x] look into redis-server package availabilty
         Found package has been added to the install instructions
-- [ ] fix multi row text make long lines
-- [ ] manage.py has excute bit set drop python
-- [ ] move up virtualenv activate
+- [x] fix multi row text make long lines
+- [x] manage.py has excute bit set drop python
+- [x] move up virtualenv activate
 - [ ] show venvwrapper examples
 
 
@@ -56,12 +56,9 @@ modules and libraries.
     git clone https://github.com/dailydot/dailydot.com.git 
     cd dailydot.com
     virtualenv venv
-    venv/bin/pip install -U pip setuptools wheel
-    venv/bin/pip install -r requirements.txt
-
-## Activating the virtualenv
-
     source venv/bin/activate
+    pip install -U pip setuptools wheel
+    pip install -r requirements.txt -r ./requirements/dev.txt
 
 ## Adding Missing Django Requirement for Django-nose
 
@@ -69,11 +66,11 @@ modules and libraries.
 
 ## Indexing for ElasticSearch (make sure ElasticSearch is running) Age is in hours
 
-    python manage.py update_index --age=168 -v 2 -b 100 -k 4 -u default
+    manage.py update_index --age=168 -v 2 -b 100 -k 4 -u default
 
 ## Starting the Django server
 
-    venv/bin/python manage.py runserver 0.0.0.0:8000
+    manage.py runserver 0.0.0.0:8000
 
 
 Once you see, "Starting development server at http://0.0.0.0:8000/", 
@@ -171,17 +168,9 @@ The first load may take a while, as the Redis cache may need to populate.
     
 |   Distribution       |  Version     |  Comments                                                  |
 |----------------------|--------------|------------------------------------------------------------|
-| Ubuntu               | 14.04        | The default Python verson that sips with this distro is    |
-|                      |              | locked at 2.7.6. This causes an issue with the ssl libaries|
-|                      |              | used in some of the modules and 3rd party addons.          |
-|                      |              |                                                            |
-|                      |              | The workaround to this issue is to hand build and install  |
-|                      |              | version 2.7.8 or above of python.                          |
-|                      | 15.10        | Durning the testing of this Distribution there was a fatal |
-|                      |              | build error that is currently unresolved.                  |
-|                      |              | *** At this point this ussue is unresolved ***             |
-|                      |              |                                                            |
-    
+| Ubuntu               | 14.04        | The default Python version that sips with this distro is .7.6. This causes an issue with the ssl libraries of the modules and 3rd party addons. this issue is to hand build and install7.8 or above of python.|
+|                      | 15.04        | The apt-get package for ElasticSearch while loads with-out error refuses to start. It gives no error or log entries. *** Additional investigation is required.|
+|                      | 15.10        | Durning the testing of this Distribution there was a fatal error that is currently unresolved. point this ussue is unresolved|
 
 ## Python:
 
@@ -190,7 +179,7 @@ The first load may take a while, as the Redis cache may need to populate.
         
 ### Python Django-Nose
 
-    Djang0-Nose is required to be installed into the virtualenv so It's not installed in the initial phases of the
+    Django-Nose is required to be installed into the virtualenv so It's not installed in the initial phases of the
     Python-Core updates.
 
 
@@ -199,7 +188,7 @@ The first load may take a while, as the Redis cache may need to populate.
 ### Redis Ports
         
     Default server is at port 6379 once installed to start the server (Ubuntu 15.04)
-        
+   further
 ### Starting/Stopping Redis
 
     sudo service redis_6379 start
