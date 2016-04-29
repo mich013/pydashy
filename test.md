@@ -1,5 +1,5 @@
 Getting Started Todo's
-- [ ] add missing file requirements-dex.txt - its been renamed requirements/dev.txt
+- [] add missing file requirements-dex.txt - its been renamed requirements/dev.txt
 - [ ] add note on when ElasticSeach deb package wouldnt losd in both OS and ElasticSearch sections
 - [ ] fix django-nose spelling
 - [x] look into redis-server package availabilty
@@ -86,177 +86,26 @@ The first load may take a while, as the Redis cache may need to populate.
 
 | Area               |      Type      |      Package        |                                                        |
 |--------------------|----------------|---------------------| -------------------------------------------------------|
-| Python-Core        | System Package | python-dev          | python-dev is the package that contains the header files for the Python C API, which is used by lxml because it includes Python C extensions for highperformance.Jun 23, 2015|
+| Python-Core        | System Package | python-dev          | python-dev is the package that contains the header files for the Python C API, which is used by lxml because it includes Python C extensions for high performance.Jun 23, 2015|
+|                    |                | python-virtualenv   | virtualenv is a tool to create isolated Python environments. virtualenv creates a folder which contains all the necessary executables to use the packages that a Python project would need.|
+|                    | Python Package | lxml                | lxml is the most feature-rich and easy-to-use library for processing XML and HTML in the Python language.|
+|                    |                | django-nose         | django-nose provides all the goodness of nose in your Django tests, like: Testing just your apps by default, not all the standard ones that happen to be in INSTALLED_APPS. Running the tests in one or more specific modules (or apps, or classes, or folders, or just running a specific test)|
 |                    |                |                     |                                                        |
-|                    |                | python-virtualenv   | virtualenv is a tool to create isolated Python         |
-|                    |                |                     | environments. virtualenv creates a folder which        |
-|                    |                |                     | contains all the necessary executables to use the      |
-|                    |                |                     | packages that a Python project would need.             |
+| Utilities          | System Package | curl                | A command line tool for getting or sending files using URL syntax. Since cURL uses libcurl, it supports a range of common Internet protocols, currently including TTP, HTTPS, FTP, FTPS, SCP, SFTP, TFTP, LDAP, DAP,ICT, TELNET, FILE, IMAP, POP3, SMTP and RTSP (the last four only in versions newer than 7.20.0 or 9 February 2010).|
+|                    |                | npm                 | npm is a NodeJS package manager. As its name would imply, you can use it to install node programs. Also, if you use it in development, it makes it easier to specify and link dependencies.Sep 11, 2010|
+|                    |                | wget                | GNU Wget (or just Wget, formerly Geturl) is a computer program that retrieves content from web servers. It is part of the GNU Project. Its name is derived from World Wide Web and get. It supports downloading via HTTP, HTTPS, and FTP protocols.|
+|                    |                | pip                 | pip is a package management system used to install and manage software packages written in Python. Many packages can be found in the Python Package Index (PyPI). Python 2.7.9 and later (on the python2 series), and Python 3.4 and later include pip (pip3 for Python 3) by default.|
 |                    |                |                     |                                                        |
-|                    | Python Package | lxml                | lxml is the most feature-rich and easy-to-use library  |
-|                    |                |                     | for processing XML and HTML in the Python language.    |
+| 3rd Party Software | System Package | Heroku Cli          | The heroku command-line tool is an interface to the Heroku Platform API and includes support for things /renaming apps, running one-off dynos, , configuring add-ons and managing your . It’s generally installed in your local as part of the Heroku Toolbelt.|
+|                    |                | PostgresSQL         | PostgreSQL (pronounced "post-gress-Q-L") is an open source relational database management system ( DBMS ) a worldwide team of volunteers. PostgreSQL controlled by any corporation or other private the source code is available free of charge.|
+|                    |                | Redis               | Redis is an open source (BSD licensed), in-memory data store, used as database, cache and message It supports data structures such as strings, lists, sets, sorted sets with range queries, hyperloglogs and geospatial indexes with.|
+|                    |                | LessCSS             | Less is a CSS pre-processor, meaning that it extends the CSS language, adding features that allow variables, functions and many other techniques that allow make CSS that is more maintainable, themable and extendable.|
+|                    |                | Java                | Java is a programming language and computing platform first released by Sun Microsystems in 1995. There are applications and websites that will not work have Java installed, and more are created . Java is fast, secure, and reliable.|
+|                    |                | ElasticSearch       | Elasticsearch is a search server based on Lucene. It provides a distributed, multitenant-capable full-text with an HTTP web interface and free JSON documents. Elasticsearch is developed and is released as open source under the terms Apache License.|
 |                    |                |                     |                                                        |
-|                    |                | django-nose         | django-nose provides all the goodness of nose in your  |
-|                    |                |                     | Django tests, like: Testing just your apps by default, |
-|                    |                |                     | not all the standard ones that happen to be in         |
-|                    |                |                     | INSTALLED_APPS. Running the tests in one or more       |
-|                    |                |                     | specific modules (or apps, or classes, or folders, or  |
-|                    |                |                     | just running a specific test)                          |
-|                    |                |                     |                                                        | 
-| Utilities          | System Package | curl                | A command line tool for getting or sending files using |
-|                    |                |                     | URL syntax. Since cURL uses libcurl, it supports a     |
-|                    |                |                     | range of common Internet protocols, currently including|
-|                    |                |                     | HTTP, HTTPS, FTP, FTPS, SCP, SFTP, TFTP, LDAP, DAP,    |
-|                    |                |                     | DICT, TELNET, FILE, IMAP, POP3, SMTP and RTSP          |
-|                    |                |                     | (the last four only in versions newer than 7.20.0 or 9 |
-|                    |                |                     | February 2010).                                        |
-|                    |                |                     |                                                        |
-|                    |                | npm                 | npm is a NodeJS package manager. As its name would     |
-|                    |                |                     | imply, you can use it to install node programs. Also,  |
-|                    |                |                     | if you use it in development, it makes it easier to    |
-|                    |                |                     | specify and link dependencies.Sep 11, 2010             |
-|                    |                |                     |                                                        |
-|                    |                | wget                | GNU Wget (or just Wget, formerly Geturl) is a computer |
-|                    |                |                     | program that retrieves content from web servers. It is |
-|                    |                |                     | part of the GNU Project. Its name is derived from World|
-|                    |                |                     | Wide Web and get. It supports downloading via HTTP,    |
-|                    |                |                     | HTTPS, and FTP protocols.                              |
-|                    |                |                     |                                                        |
-|                    |                | pip                 | pip is a package management system used to install     |
-|                    |                |                     | and manage software packages written in Python.        |
-|                    |                |                     | Many packages can be found in the Python Package Index |
-|                    |                |                     | (PyPI). Python 2.7.9 and later                         |
-|                    |                |                     | (on the python2 series), and Python 3.4 and later      |
-|                    |                |                     | include pip (pip3 for Python 3) by default.            |
-|                    |                |                     |                                                        |
-| 3rd Party Software | System Package | Heroku Cli          | The heroku command-line tool is an interface to the    |
-|                    |                |                     | Heroku Platform API and includes support for things    |
-|                    |                |                     | like creating/renaming apps, running one-off dynos,    |
-|                    |                |                     | taking backups, configuring add-ons and managing your  |
-|                    |                |                     | app’s state. It’s generally installed in your local    |
-|                    |                |                     | dev environment as part of the Heroku Toolbelt.        |
-|                    |                |                     |                                                        |
-|                    |                | PostgresSQL         | PostgreSQL (pronounced "post-gress-Q-L") is an open    |
-|                    |                |                     | source relational database management system ( DBMS )  |
-|                    |                |                     | developed by a worldwide team of volunteers. PostgreSQL|
-|                    |                |                     | is not controlled by any corporation or other private  |
-|                    |                |                     | entity and the source code is available free of charge.|
-|                    |                |                     |                                                        |
-|                    |                | Redis               | Redis is an open source (BSD licensed), in-memory data |
-|                    |                |                     | structure store, used as database, cache and message   |
-|                    |                |                     | broker. It supports data structures such as strings,   |
-|                    |                |                     | hashes, lists, sets, sorted sets with range queries,   |
-|                    |                |                     | bitmaps, hyperloglogs and geospatial indexes with      |
-|                    |                |                     | radius queries.                                        |
-|                    |                |                     |                                                        |
-|                    |                | LessCSS             | Less is a CSS pre-processor, meaning that it extends   |
-|                    |                |                     | the CSS language, adding features that allow variables,|
-|                    |                |                     | mixins, functions and many other techniques that allow |
-|                    |                |                     | you to make CSS that is more maintainable, themable and|
-|                    |                |                     | extendable.                                            |
-|                    |                |                     |                                                        |
-|                    |                | Java                | Java is a programming language and computing platform  |
-|                    |                |                     | first released by Sun Microsystems in 1995. There are  |
-|                    |                |                     | lots of applications and websites that will not work   |
-|                    |                |                     | unless you have Java installed, and more are created   |
-|                    |                |                     | every day. Java is fast, secure, and reliable.         |
-|                    |                |                     |                                                        |
-|                    |                | ElasticSearch       | Elasticsearch is a search server based on Lucene. It   |
-|                    |                |                     | provides a distributed, multitenant-capable full-text  |
-|                    |                |                     | search engine with an HTTP web interface and           |
-|                    |                |                     | schema-free JSON documents. Elasticsearch is developed |
-|                    |                |                     | in Java and is released as open source under the terms |
-|                    |                |                     | of the Apache License.                                 |
-|                    |                |                     |                                                        |
-| Support Libraries  | System Package | libxml2-dev         | Libraries, include files, etc you can use to develop   |
-|                    |                |                     | XML applications. This library allows to manipulate XML|
-|                    |                |                     | files. It includes support to read, modify and write   |
-|                    |                |                     | XML and HTML files. There is DTDs support this includes|
-|                    |                |                     | parsing and validation even with complex DtDs, either  |
-|                    |                |                     | at parse time or later once the document has been      |
-|                    |                |                     | modified. The output can be a simple SAX stream or and |
-|                    |                |                     | in-memory DOM like representations. In this case one   |
-|                    |                |                     | can use the built-in XPath and XPointer implementation |
-|                    |                |                     | to select subnodes or ranges. A flexible Input/Output  |
-|                    |                |                     | mechanism is available, with existing HTTP and FTP     |
-|                    |                |                     | modules and combined to an URI library.                |
-|                    |                |                     |                                                        |
-|                    |                | libxslt1-dev        | XSLT is an XML language for defining transformations of|
-|                    |                |                     | XML files from XML to some other arbitrary format, such|
-|                    |                |                     | as XML, HTML, plain text, etc. using standard XSLT     |
-|                    |                |                     | stylesheets. libxslt is a C library which implements   |
-|                    |                |                     | XSLT version 1.0.                                      |
-|                    |                |                     |                                                        |
-|                    |                | libffi-dev          | This package contains the headers and static library   |
-|                    |                |                     | files necessary for building programs which use libffi.|
-|                    |                |                     | A foreign function interface is the popular name for   |
-|                    |                |                     | the interface that allows code written in one language |
-|                    |                |                     | to call code written in another language.              |
-|                    |                |                     |                                                        |
-| 3rd Party Software | System Package | Heroku Cli          | The heroku command-line tool is an interface to the    |
-|                    |                |                     | Heroku Platform API and includes support for things    |
-|                    |                |                     | like creating/renaming apps, running one-off dynos,    |
-|                    |                |                     | taking backups, configuring add-ons and managing your  |
-|                    |                |                     | app’s state. It’s generally installed in your local    |
-|                    |                |                     | dev environment as part of the Heroku Toolbelt.        |
-|                    |                |                     |                                                        |
-|                    |                | PostgresSQL         | PostgreSQL (pronounced "post-gress-Q-L") is an open    |
-|                    |                |                     | source relational database management system ( DBMS )  |
-|                    |                |                     | developed by a worldwide team of volunteers. PostgreSQL|
-|                    |                |                     | is not controlled by any corporation or other private  |
-|                    |                |                     | entity and the source code is available free of charge.|
-|                    |                |                     |                                                        |
-|                    |                | Redis               | Redis is an open source (BSD licensed), in-memory data |
-|                    |                |                     | structure store, used as database, cache and message   |
-|                    |                |                     | broker. It supports data structures such as strings,   |
-|                    |                |                     | hashes, lists, sets, sorted sets with range queries,   |
-|                    |                |                     | bitmaps, hyperloglogs and geospatial indexes with      |
-|                    |                |                     | radius queries.                                        |
-|                    |                |                     |                                                        |
-|                    |                | LessCSS             | Less is a CSS pre-processor, meaning that it extends   |
-|                    |                |                     | the CSS language, adding features that allow variables,|
-|                    |                |                     | mixins, functions and many other techniques that allow |
-|                    |                |                     | you to make CSS that is more maintainable, themable and|
-|                    |                |                     | extendable.                                            |
-|                    |                |                     |                                                        |
-|                    |                | Java                | Java is a programming language and computing platform  |
-|                    |                |                     | first released by Sun Microsystems in 1995. There are  |
-|                    |                |                     | lots of applications and websites that will not work   |
-|                    |                |                     | unless you have Java installed, and more are created   |
-|                    |                |                     | every day. Java is fast, secure, and reliable.         |
-|                    |                |                     |                                                        |
-|                    |                | ElasticSearch       | Elasticsearch is a search server based on Lucene. It   |
-|                    |                |                     | provides a distributed, multitenant-capable full-text  |
-|                    |                |                     | search engine with an HTTP web interface and           |
-|                    |                |                     | schema-free JSON documents. Elasticsearch is developed |
-|                    |                |                     | in Java and is released as open source under the terms |
-|                    |                |                     | of the Apache License.                                 |
-|                    |                |                     |                                                        |
-| Support Libraries  | System Package | libxml2-dev         | Libraries, include files, etc you can use to develop   |
-|                    |                |                     | XML applications. This library allows to manipulate XML|
-|                    |                |                     | files. It includes support to read, modify and write   |
-|                    |                |                     | XML and HTML files. There is DTDs support this includes|
-|                    |                |                     | parsing and validation even with complex DtDs, either  |
-|                    |                |                     | at parse time or later once the document has been      |
-|                    |                |                     | modified. The output can be a simple SAX stream or and |
-|                    |                |                     | in-memory DOM like representations. In this case one   |
-|                    |                |                     | can use the built-in XPath and XPointer implementation |
-|                    |                |                     | to select subnodes or ranges. A flexible Input/Output  |
-|                    |                |                     | mechanism is available, with existing HTTP and FTP     |
-|                    |                |                     | modules and combined to an URI library.                |
-|                    |                |                     |                                                        |
-|                    |                | libxslt1-dev        | XSLT is an XML language for defining transformations of|
-|                    |                |                     | XML files from XML to some other arbitrary format, such|
-|                    |                |                     | as XML, HTML, plain text, etc. using standard XSLT     |
-|                    |                |                     | stylesheets. libxslt is a C library which implements   |
-|                    |                |                     | XSLT version 1.0.                                      |
-|                    |                |                     |                                                        |
-|                    |                | libffi-dev          | This package contains the headers and static library   |
-|                    |                |                     | files necessary for building programs which use libffi.|
-|                    |                |                     | A foreign function interface is the popular name for   |
-|                    |                |                     | the interface that allows code written in one language |
-|                    |                |                     | to call code written in another language.              |
-|                    |                |                     |                                                        |
+| Support Libraries  | System Package | libxml2-dev         | Libraries, include files, etc you can use to developXML applications. This library allows to manipulate XMLIt includes support to read, modify and write HTML files. There is DTDs support this includes validation even with complex DtDs, either time or later once the document has been The output can be a simple SAX stream or and memory DOM like representations. In this case one the built-in XPath and XPointer implementation subnodes or ranges. A flexible Input/Output available, with existing HTTP and FTP combined to an URI library.|
+|                    |                | libxslt1-dev        | XSLT is an XML language for defining transformations of files from XML to some other arbitrary format, such , HTML, plain text, etc. using standard XSLT libxslt is a C library which implements 1.0.|
+|                    |                | libffi-dev          | This package contains the headers and static library files necessary for building programs which use libffi. function interface is the popular name for that allows code written in one language code written in another language. 
 
 ### Installing Python-Core Additions
 
@@ -306,7 +155,7 @@ The first load may take a while, as the Redis cache may need to populate.
 |                    | ``` sudo make install ```                                                                       |
 |                    | ``` cd utils ```                                                                                |
 |                    | ``` sudo ./install_server.sh ```                                                                |
-| Redis apt-get      | ``` sudo apt-get install redis-server                                                           |
+| Redis - apt-get    | ``` sudo apt-get install redis-server                                                           |
 | LessCSS            | ``` sudo npm install -g less ```                                                                |
 | Java               | ``` sudo apt-get install openjdk-8-jre ```                                                      |
 | ElasticSearch      | ``` wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-2.3.1.tar.gz ``` |
