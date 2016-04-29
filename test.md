@@ -1,9 +1,22 @@
+Getting Started Todo's
+- [ ] add missing file requirements-dex.txt - its been renamed requirements/dev.txt
+- [ ] add note on when ElasticSeach deb package wouldnt losd in both OS and ElasticSearch sections
+- [ ] fix django-nose spelling
+- [x] look into redis-server package availabilty
+        Found package has been added to the install instructions
+- [ ] fix multi row text make long lines
+- [ ] manage.py has excute bit set drop python
+- [ ] move up virtualenv activate
+- [ ] show venvwrapper examples
+
+
 # Getting Started
 =================
 
 These are some basic survival instructions to get a local instance of dailydot.com
 installed and running. Some elbow grease will need to be put into making this easier
 and more portable. However, with these directions and some luck, you'll be up and
+
 running!
 
 If this is a clean and fresh build install please be sure to read the
@@ -73,10 +86,7 @@ The first load may take a while, as the Redis cache may need to populate.
 
 | Area               |      Type      |      Package        |                                                        |
 |--------------------|----------------|---------------------| -------------------------------------------------------|
-| Python-Core        | System Package | python-dev          | python-dev is the package that contains the header     |
-|                    |                |                     | files for the Python C API, which is used by lxml      |
-|                    |                |                     | because it includes Python C extensions for high       |
-|                    |                |                     | performance.Jun 23, 2015                               |
+| Python-Core        | System Package | python-dev          | python-dev is the package that contains the header files for the Python C API, which is used by lxml because it includes Python C extensions for highperformance.Jun 23, 2015|
 |                    |                |                     |                                                        |
 |                    |                | python-virtualenv   | virtualenv is a tool to create isolated Python         |
 |                    |                |                     | environments. virtualenv creates a folder which        |
@@ -285,7 +295,7 @@ The first load may take a while, as the Redis cache may need to populate.
 | Heroku             | ``` wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh ```                             |
 | PostgresSQL        | ``` sudo apt-get install postgresql-9.4 ```                                                     |
 |                    | ``` sudo apt-get install postgresql-server-dev-9.4 ```                                          |
-| Redis              | ``` sudo apt-get update ```                                                                     |
+| Redis - Manual Inst| ``` sudo apt-get update ```                                                                     |
 |                    | ``` sudo apt-get install build-essential ```                                                    |
 |                    | ``` sudo apt-get install tcl8.5 ```                                                             |
 |                    | ``` wget http://download.redis.io/redis-stable.tar.gz ```                                       |
@@ -296,6 +306,7 @@ The first load may take a while, as the Redis cache may need to populate.
 |                    | ``` sudo make install ```                                                                       |
 |                    | ``` cd utils ```                                                                                |
 |                    | ``` sudo ./install_server.sh ```                                                                |
+| Redis apt-get      | ``` sudo apt-get install redis-server                                                           |
 | LessCSS            | ``` sudo npm install -g less ```                                                                |
 | Java               | ``` sudo apt-get install openjdk-8-jre ```                                                      |
 | ElasticSearch      | ``` wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-2.3.1.tar.gz ``` |
@@ -353,7 +364,7 @@ The first load may take a while, as the Redis cache may need to populate.
     redis-cli
     redis 127.0.0.1:6379>
 
-## ElasticSearch
+## ElasticSearch:
 
 ### Discoveries and Observations
 
@@ -366,7 +377,7 @@ The first load may take a while, as the Redis cache may need to populate.
     cd /usr/share/elasticsearch
     sudo ./bin/elasticsearch&
 
-### Testing ElasticSearch Using browser or curl  connect to http://localhost:9200
+### Testing ElasticSearch curl  connect to http://localhost:9200
 
     curl localhost:9200
 
@@ -384,4 +395,3 @@ The first load may take a while, as the Redis cache may need to populate.
         },
         "tagline" : "You Know, for Search"
       }        
-
