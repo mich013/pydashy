@@ -1,4 +1,4 @@
-Getting Started Todo's
+# Todo's
 - [x] add missing file requirements-dex.txt - its been renamed requirements/dev.txt
 - [x] add note on when ElasticSeach apt-get package wouldnt load in both OS and ElasticSearch sections
 - [x] fix django-nose spelling
@@ -191,14 +191,7 @@ The first load may take a while, as the Redis cache may need to populate.
 
     Python rev should be greater then 2.7.8
     
-        
-### Python Django-Nose
-
-    Django-Nose is required to be installed into the virtualenv so It's not installed in the initial phases of the
-    Python-Core updates.
-
-{sre}
-## Redis:
+## Redis: [Back To top](#getting)
 
 ### Redis Ports
         
@@ -227,7 +220,7 @@ The first load may take a while, as the Redis cache may need to populate.
     redis-cli
     redis 127.0.0.1:6379>
 
-## ElasticSearch:
+## ElasticSearch: - [Back To top](#getting)
 
 ### Discoveries and Observations
 
@@ -235,7 +228,7 @@ The first load may take a while, as the Redis cache may need to populate.
     without incendent. However it failed to start the service. This is why the apt-get
     install instructions have been replaced with manual install & start instructions
 
-{ses}
+
 ### Starting ElasticSearch
 
     cd /usr/share/elasticsearch
