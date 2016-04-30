@@ -13,7 +13,7 @@ Getting Started Todo's
 - [x] fix elasticsearch start do not run as root
 - [x] move sudo apt-get update ... to start of lib section
 - [x] add tcl8.5 to 3rd party section
-- [ ] remove django-nose requirement from doc add dev.txt fixed issue
+- [X] remove django-nose requirement from doc add dev.txt fixed issue
 
 # Getting Started
 =================
@@ -28,6 +28,14 @@ modules and libraries.
 
 
 # Creating and Building Instance
+
+if this is a new system build follow these [steps](#installing) to install the dependent
+software. Once all dependant software has been installed ensure that to following software is
+started and running.
+
+[Redis Server](#sre)
+[ElasticSearch](#ses)
+
 
 ## Database downloading and importing
 
@@ -67,10 +75,6 @@ modules and libraries.
     pip install -U pip setuptools wheel
     pip install -r requirements.txt -r ./requirements/dev.txt
 
-## Adding Missing Django Requirement for Django-nose
-
-    pip install django-nose
-
 ## Indexing for ElasticSearch (make sure ElasticSearch is running) Age is in hours
 
     python manage.py update_index --age=168 -v 2 -b 100 -k 4 -u default
@@ -103,7 +107,6 @@ The first load may take a while, as the Redis cache may need to populate.
 | Python-Core        | System Package | python-dev          | python-dev is the package that contains the header files for the Python C API, which is used by lxml because it includes Python C extensions for high performance.Jun 23, 2015|
 |                    |                | python-virtualenv   | virtualenv is a tool to create isolated Python environments. virtualenv creates a folder which contains all the necessary executables to use the packages that a Python project would need.|
 |                    | Python Package | lxml                | lxml is the most feature-rich and easy-to-use library for processing XML and HTML in the Python language.|
-|                    |                | django-nose         | django-nose provides all the goodness of nose in your Django tests, like: Testing just your apps by default, not all the standard ones that happen to be in INSTALLED_APPS. Running the tests in one or more specific modules (or apps, or classes, or folders, or just running a specific test)|
 |                    |                |                     |                                                        |
 | 3rd Party Software | System Package | Heroku Cli          | The heroku command-line tool is an interface to the Heroku Platform API and includes support for things /renaming apps, running one-off dynos, , configuring add-ons and managing your . It’s generally installed in your local as part of the Heroku Toolbelt.|
 |                    |                | PostgresSQL         | PostgreSQL (pronounced "post-gress-Q-L") is an open source relational database management system ( DBMS ) a worldwide team of volunteers. PostgreSQL controlled by any corporation or other private the source code is available free of charge.|
@@ -113,6 +116,8 @@ The first load may take a while, as the Redis cache may need to populate.
 |                    |                | Java                | Java is a programming language and computing platform first released by Sun Microsystems in 1995. There are applications and websites that will not work have Java installed, and more are created . Java is fast, secure, and reliable.|
 |                    |                | ElasticSearch       | Elasticsearch is a search server based on Lucene. It provides a distributed, multitenant-capable full-text with an HTTP web interface and free JSON documents. Elasticsearch is developed and is released as open source under the terms Apache License.|
 |                    |                |                     |                                                        |
+
+# Installing
 
 ### Installing Libraries
 
@@ -154,14 +159,14 @@ The first load may take a while, as the Redis cache may need to populate.
 |                    | ``` sudo apt-get install postgresql-server-dev-9.4 ```                                          |
 | Tcl                | ``` sudo apt-get install tcl8.5 ```                                                             |
 | Redis - Manual Inst| ``` wget http://download.redis.io/redis-stable.tar.gz ```                                       |
-|                    | ``` tar xvzf redis-stable.tar.gz                                                                |
+|                    | ``` tar xvzf redis-stable.tar.gz  ```                                                           |
 |                    | ``` cd redis-stable ```                                                                         |
-|                    | ``` make                                                                                        |
+|                    | ``` make ```                                                                                    |
 |                    | ``` make test ```                                                                               |
 |                    | ``` sudo make install ```                                                                       |
 |                    | ``` cd utils ```                                                                                |
 |                    | ``` sudo ./install_server.sh ```                                                                |
-| Redis - apt-get    | ``` sudo apt-get install redis-server                                                           |
+| Redis - apt-get    | ``` sudo apt-get install redis-server ```                                                       |
 | LessCSS            | ``` sudo npm install -g less ```                                                                |
 | Java               | ``` sudo apt-get install openjdk-8-jre ```                                                      |
 | ElasticSearch      | ``` wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-2.3.1.tar.gz ``` |
@@ -191,7 +196,7 @@ The first load may take a while, as the Redis cache may need to populate.
     Django-Nose is required to be installed into the virtualenv so It's not installed in the initial phases of the
     Python-Core updates.
 
-
+{sre}
 ## Redis:
 
 ### Redis Ports
@@ -229,12 +234,14 @@ The first load may take a while, as the Redis cache may need to populate.
     without incendent. However it failed to start the service. This is why the apt-get
     install instructions have been replaced with manual install & start instructions
 
+{ses}
 ### Starting ElasticSearch
 
     cd /usr/share/elasticsearch
     ./bin/elasticsearch&
 
-### Testing ElasticSearch curl  connect to http://localhost:9200
+### Testing ElasticSearch
+    curl  connect to http://localhost:9200
 
     curl localhost:9200
 
