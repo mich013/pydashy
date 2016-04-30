@@ -33,8 +33,9 @@ if this is a new system build follow these [steps](#installing) to install the d
 software. Once all dependant software has been installed ensure that to following software is
 started and running.
 
-[Redis Server](#sre)
-[ElasticSearch](#ses)
+[Redis Server](#redis)
+
+[ElasticSearch](#elasticsearch)
 
 
 ## Database downloading and importing
