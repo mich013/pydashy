@@ -193,7 +193,7 @@ The first load may take a while, as the Redis cache may need to populate.
     
 ## Redis 
 
-[Back To top](#getting)
+[Back To top](#getting-started)
 
 ### Redis Ports
         
