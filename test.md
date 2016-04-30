@@ -191,7 +191,9 @@ The first load may take a while, as the Redis cache may need to populate.
 
     Python rev should be greater then 2.7.8
     
-## Redis: [Back To top](#getting)
+## Redis 
+
+[Back To top](#getting)
 
 ### Redis Ports
         
