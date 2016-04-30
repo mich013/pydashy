@@ -222,7 +222,9 @@ The first load may take a while, as the Redis cache may need to populate.
     redis-cli
     redis 127.0.0.1:6379>
 
-## ElasticSearch: - [Back To top](#getting)
+## ElasticSearch
+
+[Back To top](#getting-started)
 
 ### Discoveries and Observations
 
